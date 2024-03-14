@@ -6,7 +6,11 @@ metadata:
 spec:
   project: default
   source:
+<<<<<<< HEAD
     repoURL: 'https://github.com/Yasminemaroukk/appTest.git'
+=======
+    repoURL: 'hhttps://github.com/Yasminemaroukk/appTest.git'
+>>>>>>> origin/main
     targetRevision: HEAD
     path: k8s/overlays/production
   destination:
