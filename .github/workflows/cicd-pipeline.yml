@@ -32,9 +32,9 @@ jobs:
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION_TAG=${GITHUB_REF/refs\/tags\//}
             echo "VERSION_TAG=$VERSION_TAG" >> $GITHUB_ENV
-            TAGS="$VERSION_TAG,$COMMIT_SHA,latest"
+            TAGS="$VERSION_TAG,$COMMIT_SHA"
           else
-            TAGS="$COMMIT_SHA,latest"
+            TAGS="$COMMIT_SHA"
           fi
           echo "DOCKER_IMAGE_TAGS=$TAGS" >> $GITHUB_ENV
 
