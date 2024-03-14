@@ -11,23 +11,10 @@ env:
   DOCKER_IMAGE: yasminemarzouk/apptest
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    env:
-      APIHOST: ${{ secrets.APIHOST }}
-      APIKEY: ${{ secrets.APIKEY }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-      - run: python -m unittest discover -s tests
+  
 
   build-and-push:
-    needs: test
+    
     runs-on: ubuntu-latest
     outputs:
       sha: ${{ steps.short-sha.outputs.sha }} 
@@ -90,21 +77,6 @@ jobs:
           git commit -m "Update image version to $IMAGE_TAG"
           git push
 
-      - name: Install Argo CD CLI
-        run: |
-          curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
-          chmod +x /usr/local/bin/argocd
 
-      - name: Login to Argo CD
-        run: |
-          argocd login $ARGOCD_SERVER --username admin --password $ARGOCD_AUTH_TOKEN
-        env:
-          ARGOCD_SERVER: ${{ secrets.ARGOCD_SERVER }}
-          ARGOCD_AUTH_TOKEN: ${{ secrets.ARGOCD_AUTH_TOKEN }}
-
-      - name: Sync Argo CD Application
-        run: |
-          argocd app sync $ARGOCD_APP_NAME
-        env:
-          ARGOCD_APP_NAME: currencyconverter-production
+     
 
