@@ -9,7 +9,7 @@ spec:
 <<<<<<< HEAD
     repoURL: 'https://github.com/Yasminemaroukk/appTest.git'
 =======
-    repoURL: 'hhttps://github.com/Yasminemaroukk/appTest.git'
+    repoURL: 'https://github.com/Yasminemaroukk/appTest.git'
 >>>>>>> origin/main
     targetRevision: HEAD
     path: k8s/overlays/production
