@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/abohmeed/currencyconverter.git'
+    repoURL: 'https://github.com/Yasminemaroukk/appTest.git'
     targetRevision: HEAD
     path: argocd
   destination:
