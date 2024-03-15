@@ -28,3 +28,4 @@ spec:
           value: "currency-exchange.p.rapidapi.com"
         - name: FLASK_ENV
           value: "development"
+#
