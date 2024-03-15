@@ -6,13 +6,15 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/Yasminemaroukk/appTest.git'
-    targetRevision: HEAD
+    repoURL: 'https://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@github.com/Yasminemaroukk/appTest.git'
+    targetRevision: main
     path: argocd
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
   syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
     automated:
       selfHeal: true
       prune: true
