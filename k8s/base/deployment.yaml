@@ -16,7 +16,7 @@ spec:
         namespace: default
       containers:
       - name: currency-converter
-        image: yasminemarzouk/apptest:59b2de2
+        image: yasminemarzouk/apptest:15053c2
         ports:
         - containerPort: 5555
         env:
