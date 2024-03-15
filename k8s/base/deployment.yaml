@@ -12,8 +12,6 @@ spec:
       labels:
         app: currency-converter
     spec:
-      destination:
-        namespace: default
       containers:
       - name: currency-converter
         image: yasminemarzouk/apptest:15053c2
