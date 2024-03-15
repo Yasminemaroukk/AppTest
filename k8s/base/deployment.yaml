@@ -18,6 +18,11 @@ spec:
         ports:
         - containerPort: 5555
         env:
+        - name: APIKEY
+          valueFrom:
+            secretKeyRef:
+              name: api-keys
+              key: APIKEY
         
         - name: APIHOST
           value: "currency-conversion-and-exchange-rates.p.rapidapi.com"
