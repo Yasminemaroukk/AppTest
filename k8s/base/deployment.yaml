@@ -14,13 +14,15 @@ spec:
     spec:
       containers:
       - name: currency-converter
-        image: yasminemarzouk/apptest:e2af41f
+        image: yasminemarzouk/apptest:18fb02c
         ports:
         - containerPort: 5555
         env:
         - name: APIKEY
-          value: "ZTBjZTAzZWMyNW1zaDQyMWVlNGU3NmE3NTVmYXAxOGRjY2Vqc24wMmUyYmMyNWVjMzQ="
-           
+          valueFrom:
+            secretKeyRef:
+              name: api-keys
+              key: APIKEY
         
         - name: APIHOST
           value: "currency-conversion-and-exchange-rates.p.rapidapi.com"
