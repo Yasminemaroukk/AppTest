@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: currency-converter
-        image: yasminemarzouk/apptest:0f6fa21
+        image: yasminemarzouk/apptest:18fb02c
         ports:
         - containerPort: 5555
         env:
