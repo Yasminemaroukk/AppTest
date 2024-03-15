@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: currency-converter
-        image: yasminemarzouk/apptest:23188bc
+        image: yasminemarzouk/apptest:18fb02c
         ports:
         - containerPort: 5555
         env:
@@ -23,6 +23,7 @@ spec:
             secretKeyRef:
               name: api-keys
               key: APIKEY
+        
         - name: APIHOST
           value: "currency-conversion-and-exchange-rates.p.rapidapi.com"
         - name: FLASK_ENV
